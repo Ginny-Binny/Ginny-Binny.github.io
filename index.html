@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gaurang | Full Stack Developer</title>
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -672,6 +673,72 @@
   <div class="section-underline fade-in"></div>
 
   <div class="projects-list fade-in">
+
+    <!-- presence -->
+    <div class="project-item">
+      <div class="project-timeline">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title-row">
+            <span class="project-title">presence — Discord Status & Coding Stats Card</span>
+            <a href="https://status.psyduck.in/card.svg" class="project-link" target="_blank" title="View Live">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="https://github.com/Ginny-Binny/presence" class="project-link" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag live">Live</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Discord.js</span>
+            <span class="project-tag">Nginx</span>
+            <span class="project-tag">Wakapi</span>
+          </div>
+        </div>
+        <p class="project-desc">Self-hosted service that turns my live Discord presence and weekly coding activity into an embeddable SVG card. Render it in a GitHub README, a blog, anywhere images work.</p>
+        <ul class="project-bullets">
+          <li>Discord bot listens to presence updates (game, IDE, status) and streams them to a card server in real time.</li>
+          <li>Card server generates the SVG on demand — instantly embeddable, no JS required on the host page.</li>
+          <li>Self-hosted Wakapi backend collects weekly coding stats (WakaTime-compatible) — no third-party data pipeline.</li>
+          <li>Running on my VPS behind Nginx with systemd units — stable since deploy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- whysh -->
+    <div class="project-item">
+      <div class="project-timeline">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title-row">
+            <span class="project-title">whysh — MCP Shell Proxy for AI Agents</span>
+            <a href="https://github.com/Ginny-Binny/whysh" class="project-link" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag wip">WIP</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MCP</span>
+          </div>
+        </div>
+        <p class="project-desc">A Model Context Protocol proxy that sits between my AI coding agent (Claude Code, Cursor, etc.) and the shell — every command the agent runs gets logged so I can audit what actually happened during a session.</p>
+        <ul class="project-bullets">
+          <li>Exposes a single <code>bash</code> MCP tool — runs the command, returns stdout/stderr/exit code verbatim to the agent.</li>
+          <li>Appends one JSON line per command to logs/commands.jsonl (command, exit code, duration, byte counts) — full output stays off disk to avoid accidentally logging secrets.</li>
+          <li>Drops into any MCP-compatible client via a one-line config — no agent-side code changes needed.</li>
+          <li>Next: fire a Claude API call after each non-trivial command and splice the explanation into the tool result.</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- WebhookMind -->
     <div class="project-item">
