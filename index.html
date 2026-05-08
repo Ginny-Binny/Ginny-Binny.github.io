@@ -783,18 +783,19 @@
             </a>
           </div>
           <div class="project-tags">
-            <span class="project-tag wip">WIP</span>
+            <span class="project-tag live">Open Source</span>
             <span class="project-tag">TypeScript</span>
             <span class="project-tag">Node.js</span>
             <span class="project-tag">MCP</span>
+            <span class="project-tag">Claude API</span>
           </div>
         </div>
-        <p class="project-desc">A Model Context Protocol proxy that sits between my AI coding agent (Claude Code, Cursor, etc.) and the shell — every command the agent runs gets logged so I can audit what actually happened during a session.</p>
+        <p class="project-desc">Model Context Protocol proxy that sits between an AI coding agent (Claude Code, Cursor, etc.) and the shell — every command runs verbatim, then a one-line explanation gets spliced back into the tool result so you can audit <em>why</em> the agent ran what it ran.</p>
         <ul class="project-bullets">
-          <li>Exposes a single <code>bash</code> MCP tool — runs the command, returns stdout/stderr/exit code verbatim to the agent.</li>
-          <li>Appends one JSON line per command to logs/commands.jsonl (command, exit code, duration, byte counts) — full output stays off disk to avoid accidentally logging secrets.</li>
-          <li>Drops into any MCP-compatible client via a one-line config — no agent-side code changes needed.</li>
-          <li>Next: fire a Claude API call after each non-trivial command and splice the explanation into the tool result.</li>
+          <li>Explanation request fires in parallel with the command itself (<code>Promise.all</code>) — zero added latency on the shell call. One-liner prefixed with 💡 lands alongside stdout/stderr/exit code in the tool result.</li>
+          <li>Smart filter skips trivial commands (<code>ls</code>, <code>cd</code>, <code>pwd</code>, bare words) and recent repeats — most routine traffic never hits the API. SHA-256-keyed disk cache means a given command gets explained once, ever.</li>
+          <li>Reuses Claude Code's existing OAuth token from <code>~/.claude/.credentials.json</code> — no API key required if you're already signed in. Falls back to <code>ANTHROPIC_API_KEY</code> from the MCP config.</li>
+          <li>Every command still appends one JSONL line (command, exit code, duration, byte counts) for the audit trail; full output stays off disk to avoid accidentally logging secrets.</li>
         </ul>
       </div>
     </div>
